@@ -2,15 +2,24 @@ package inventory;
 
 public class Inventory {
 	
+	private static final String String = null; // experiement 
+
 	private static int counter = 0;
+	
+	/**
+	 * Default Inventory type is Inventory, but this should always get changes
+	 * in the subclasses (child class / derived class).  It's final so it 
+	 * can't be internally changed.
+	 */
+	final public String type = "Inventory"; 
 	
 	protected int id = 0;
 
-	private int ISBN;
+	protected int ISBN = 0;
 
-	private Genre Genre;
+	protected Genre Genre = null;
 
-	private String AlphabetCategory;
+	protected String AlphabetCategory = null;
 	
 public Inventory(){
 		
@@ -27,22 +36,28 @@ public Inventory(int ISBN, Genre genre, String AlphabetCategory ) {
 	this();
 	
 	this.setISBN(ISBN);
-	this.setGenre(genre);
+	this.setGenre(Genre);
 	this.setAlphabetCategory(AlphabetCategory);
 	
 
 }
 
-	private void setAlphabetCategory(String AlphabetCategory) {
-		if (AlphabetCategory == toString()) {
-			this.AlphabetCategory = AlphabetCategory; 
-		}
-		else
-			this.AlphabetCategory = "Invalid";  
-	
+public int getId() {
+	return this.id;
 }
 
-	private void setISBN(int ISBN) {
+	public void setAlphabetCategory(String AlphabetCategory) {
+		if (AlphabetCategory == toString()) 
+			this.AlphabetCategory = AlphabetCategory; 
+		else
+			this.AlphabetCategory = String;  
+    }
+	
+	//public String getAlphabetCategory() {
+	//	return this.AlphabetCategory;
+	//}
+
+	public void setISBN(int ISBN) {
 		if (ISBN >= 500) {
 			this.ISBN = ISBN;	
 		}
@@ -50,7 +65,11 @@ public Inventory(int ISBN, Genre genre, String AlphabetCategory ) {
 			this.ISBN = 300;
 	}
 	
-	private void setGenre(Genre genre) {
+	public Genre getGenre() {
+		return this.Genre;
+	}
+	
+	public void setGenre(Genre genre) {
 		this.Genre = genre;
 	}
 	
