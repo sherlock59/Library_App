@@ -11,7 +11,7 @@ public enum Genre  {
  *
  */
 	/*
-	 * Below are genres for the type of books and magazines
+	 * Below are genres for the type of books and Magazines
 	 */
 	COMEDY, 
 	

@@ -38,8 +38,6 @@ public Inventory(int ISBN, Genre genre, String AlphabetCategory ) {
 	this.setISBN(ISBN);
 	this.setGenre(Genre);
 	this.setAlphabetCategory(AlphabetCategory);
-	
-
 }
 
 public int getId() {
@@ -73,10 +71,19 @@ public int getId() {
 		this.Genre = genre;
 	}
 	
+	public String getRecord() {
+		return this.Book;
+	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public java.lang.String getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
