@@ -4,15 +4,15 @@ public class Magazines extends Inventory {
 	
 	final String type = "Magazines";
 	
-	private Magazine magazineDate;
+	private int magazineDate;
 	
 	public Magazines() {
 		this(0, null, null);
 	}
 	
-	public Magazines(int ISBN, Genre genre, String AlphabetCategory) {
-		super(ISBN, genre, AlphabetCategory);
-		this.magazineDate = null;
+	public Magazines(int IBSN, Genre genre, String AlphabetCategory) {
+		super(IBSN, genre, AlphabetCategory);
+		this.magazineDate = 0;
 	}
 	
 	@Override
@@ -20,11 +20,11 @@ public class Magazines extends Inventory {
 		return this.type;
 	}
 	
-	public Magazine getMagazineDate() {
+	public int getMagazineDate() {
 		return this.magazineDate;
 	}
 	
-	public void setMagazineDate(Magazine magazineDate) {
+	public void setMagazineDate(int magazineDate) {
 		this.magazineDate = magazineDate;
 	}
 	

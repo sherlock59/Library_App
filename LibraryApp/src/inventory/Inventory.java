@@ -15,7 +15,7 @@ public class Inventory {
 	
 	protected int id = 0;
 
-	protected int ISBN = 0;
+	protected int IBSN = 0;
 
 	protected Genre Genre = null;
 
@@ -31,11 +31,11 @@ public Inventory(){
 		this.id = Inventory.counter;
 	}
 
-public Inventory(int ISBN, Genre genre, String AlphabetCategory ) {
+public Inventory(int IBSN, Genre genre, String AlphabetCategory ) {
 	
 	this();
 	
-	this.setISBN(ISBN);
+	this.setISBN(IBSN);
 	this.setGenre(Genre);
 	this.setAlphabetCategory(AlphabetCategory);
 }
@@ -55,12 +55,12 @@ public int getId() {
 	//	return this.AlphabetCategory;
 	//}
 
-	public void setISBN(int ISBN) {
-		if (ISBN >= 500) {
-			this.ISBN = ISBN;	
+	public void setISBN(int IBSN) {
+		if (IBSN >= 500) {
+			this.IBSN = IBSN;	
 		}
 		else 
-			this.ISBN = 300;
+			this.IBSN = 300;
 	}
 	
 	public Genre getGenre() {
@@ -71,11 +71,6 @@ public int getId() {
 		this.Genre = genre;
 	}
 	
-	public String getRecord() {
-		return this.Book;
-	}
-	
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
