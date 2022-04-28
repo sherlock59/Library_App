@@ -35,13 +35,17 @@ public Inventory(int IBSN, Genre genre, String AlphabetCategory ) {
 	
 	this();
 	
-	this.setISBN(IBSN);
+	this.setIBSN(IBSN);
 	this.setGenre(Genre);
 	this.setAlphabetCategory(AlphabetCategory);
 }
 
-public int getId() {
-	return this.id;
+public int getIBSN() {
+	return this.IBSN;
+}
+
+public String getAlphabetCategory() {
+	return this.AlphabetCategory;
 }
 
 	public void setAlphabetCategory(String AlphabetCategory) {
@@ -55,7 +59,7 @@ public int getId() {
 	//	return this.AlphabetCategory;
 	//}
 
-	public void setISBN(int IBSN) {
+	public void setIBSN(int IBSN) {
 		if (IBSN >= 500) {
 			this.IBSN = IBSN;	
 		}

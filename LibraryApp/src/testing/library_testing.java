@@ -3,7 +3,11 @@ package testing; // keeping the testbench logic separate
 import java.util.ArrayList;
 import java.util.List;
 
-import Inventory.*; // the wildcard * will import all classes & interfaces
+//import inventory.*; // the wildcard * will import all classes & interfaces
+import inventory.Book;
+import inventory.Genre;
+import inventory.Inventory;
+import inventory.Magazines;
 
 /** 
  * The TestBench class contains multiple unit testing methods for testing
@@ -20,7 +24,7 @@ import Inventory.*; // the wildcard * will import all classes & interfaces
  * @version 2.0
  * @since 2022.04.27
  */
-public class TestBench {
+public class library_testing {
 	
 	/**
 	 * Stores all types of zoo animals as long as it's a derived from the Animal class.
@@ -30,7 +34,7 @@ public class TestBench {
 	/**
 	 * The default constructor currently isn't needed.
 	 */
-	TestBench(){
+	library_testing(){
 	}
 	
 	/**
@@ -44,17 +48,17 @@ public class TestBench {
 		System.out.println();
 
 		//create an Animal instance (object) using default constructor
-		Inventory inventory = new library();
-
-		libraryInventory.add(Inventory);
+		Inventory inventory = new Inventory();
 		
-		displayInfo(Inventory);
+		displayInfo(inventory);
 		
-		Inventory.setIBSN(10632913);
-		Inventory.setGenre(Genre.MYTHS);
-		animal.setAlphabetCategory(A-Z);
+		inventory.setIBSN(10632913);
+		inventory.setGenre(Genre.MYSTERY);
+		inventory.setAlphabetCategory("N");
 		
-		displayInfo(Inventory);	
+		Library.add(inventory);
+		
+		displayInfo(inventory);	
 
 	}
 	
@@ -62,16 +66,16 @@ public class TestBench {
 	 * Unit test instantiation of an Animal reference variable (object)
 	 * using the overload constructor
 	 */
-	private static void unitTest2_Animal_Overload() {	
+	private static void unitTest2_Inventory_Overload() {	
 		
 		System.out.println();
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
 		//create another Animal instance (object) using overload constructor		
-		Inventory inventory = new Inventory(100, Genre.MYTHS, A);
+		Inventory inventory = new Inventory(100, Genre.MYSTERY, "N");
 		
-		libraryInventory.add(Inventory);
+		Library.add(inventory);
 		
 		displayInfo(inventory);
 
@@ -81,7 +85,7 @@ public class TestBench {
 	 * Unit test instantiation of an Bird reference variable (object)
 	 * using the default constructor
 	 */
-	private static void unitTest3_Bird_Default() {
+	private static void unitTest3_Book_Default() {
 		
 		System.out.println();
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -89,13 +93,13 @@ public class TestBench {
 		
 		//create a Bird instance (object) using default constructor
 		Inventory book = new Book();
-		libraryInventory.add(book);
+		Library.add(book);
 	
 		displayInfo(book);
 		
-		book.setISBN(12435135);
+		book.setIBSN(12435);
 		book.setGenre(Genre.HORROR);
-		book.setAlphabetCategory(0.5);
+		book.setAlphabetCategory("Q");
 		
 		displayInfo(book);
 		////// was 
@@ -112,10 +116,10 @@ public class TestBench {
 		System.out.println();
 		
 		//create a Fish instance (object) using overload constructor		
-		String Magazines = new Magazines(81237123, Genre.COMEDY, G);
-		libraryInventory.add(Magazines);
+	    Magazines magazines = new Magazines(81237123, Genre.COMEDY, "G");
+		Library.add(magazines);
 
-		displayInfo(Magazines);
+		displayInfo(magazines);
 		/////// was 
 	}
 	
@@ -129,18 +133,9 @@ public class TestBench {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-	    String Book = new Book(10293123, Genre.DRAMA, T);	
-		TestBench.displayInfo(Book);
-		
-		//bird.setWingspan(-1);
-		//System.out.println("The bird's wingspan is " + bird.getWingspan());
-
-		//System.out.println();
-		
-		//Fish fish = new Fish(-2, Gender.FEMALE, -10.5);	
-		//TestBench.displayInfo(fish);
-		//fish.setWaterType(Water.SALT);
-		//System.out.println("The fish is a " + fish.getWaterType() + " water fish");
+	    Book book = new Book(10293123, Genre.DRAMA, "T");	
+	    
+		displayInfo(book);
 
 	}
 		
@@ -150,9 +145,9 @@ public class TestBench {
 	 * @param animal the reference variable data to be displayed
 	 */
 	private static void displayInfo(Inventory Inventory) {
-		
-		System.out.printf("ID: %-3d  Type: %-10s Gender: %-10s Age: %3d   Weight: %8.2f\n",
-				Inventory.getId(), Inventory.getType(), Inventory.getGenre(), Inventory.getISBN(), Inventory.getAlphabetCategory());
+	
+		System.out.printf("IBSN: %-10d  Type: %-10s Genre: %-10s AlphabetCategory: %-10s \n",
+				Inventory.getIBSN(), Inventory.getType(), Inventory.getGenre(), Inventory.getAlphabetCategory());
 		
 	} // end of displayInfo
 
@@ -164,12 +159,12 @@ public class TestBench {
 		
 		System.out.println();
 		System.out.println("============== Library REPORT ============");
-		System.out.println("ID  Type       Genre     ISBN   AlphabetCategory");
+		System.out.println("IBSN  Type       Genre    AlphabetCategory");
 		System.out.println("=== ========== ========== === ========");
 		
-		for Inventory Inventory : libraryInventory) {
-			System.out.printf("%-3d %-10s %-10s %3d %8.2f\n",
-					Inventory.getId(), Inventory.getType(), Inventory.getGenre(), Inventory.get.ISBN(), Inventory.getAlphabetCategory());
+		for (Inventory Inventory : Library) {
+			System.out.printf("%-10d %-10s %-10s %-10s\n",
+					Inventory.getIBSN(), Inventory.getType(), Inventory.getGenre(), Inventory.getAlphabetCategory());
 		}
 		
 		System.out.println();
@@ -184,13 +179,13 @@ public class TestBench {
 	 */
 	public static void main(String[] args) {
 		
-		TestBench.unitTest1_Inventory_Default();
-		TestBench.unitTest2_Inventory_Overload();
-		TestBench.unitTest3_Book_Default();
-		TestBench.unitTest4_Magazines_Overload();
-		TestBench.unitTest5_Invalid_Data();
+		library_testing.unitTest1_Inventory_Default();
+		library_testing.unitTest2_Inventory_Overload();
+		library_testing.unitTest3_Book_Default();
+		library_testing.unitTest4_Magazines_Overload();
+		library_testing.unitTest5_Invalid_Data();
 		
-		TestBench.displayReport();
+		library_testing.displayReport();
 		
 	}  // end of main method
 
