@@ -1,3 +1,13 @@
+/*
+ * This child overrides and alters parent clasee's function 
+ * 
+ * @author Annaberdi Meredov 
+ * @version 2.2
+ * @since 2022.04.27
+ */
+ 
+
+
 package inventory;
 
 public class Magazines extends Inventory {
@@ -31,10 +41,5 @@ public class Magazines extends Inventory {
 	public void letter() {
 		System.out.println(this.type + "belongs in a section ...");
 	}
-
-	//public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	//}
 
 }

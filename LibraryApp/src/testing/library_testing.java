@@ -21,7 +21,7 @@ import inventory.Magazines;
  * methods are defined as private. 
  * 
  * @author Annaberdi Meredov
- * @version 2.0
+ * @version 2.2
  * @since 2022.04.27
  */
 public class library_testing {
@@ -172,7 +172,7 @@ public class library_testing {
 	} // end of displayReport method
 	
 	/**
-	 * The testbench to regression test that the Animal base and subclasses are
+	 * The library testing to regression test that the Animal base and subclasses are
 	 * working correctly.
 	 * 
 	 * @param args this program doesn't use command line input arguments

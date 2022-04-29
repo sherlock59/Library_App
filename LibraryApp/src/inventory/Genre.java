@@ -1,6 +1,3 @@
-package inventory;
-
-public enum Genre  {
 /**
  * Enum is a special "class" that represents a group of constants 
  * Only following genres are available
@@ -10,6 +7,10 @@ public enum Genre  {
  * @since 2022.04.24
  *
  */
+package inventory;
+
+public enum Genre  {
+
 	/*
 	 * Below are genres for the type of books and Magazines
 	 */
