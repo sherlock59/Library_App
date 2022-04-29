@@ -1,7 +1,14 @@
-/*
+/** 
+ * The Inventory parent class does presents the library details and stock
+ * details. For example, if the library member checks out a magazine or book, the 
+ * associate can get more information by scanning the magazine and using this app.
  * 
+ * Github link: https://github.com/sherlock59/Library_App.git
+ * 
+ * @author Annaberdi Meredov
+ * @version 2.2
+ * @since 2022.04.27
  */
-
 package inventory;
 
 public class Inventory {
@@ -28,8 +35,7 @@ public class Inventory {
 public Inventory(){
 		
 		/*
-		 * There are no setters for the animal's id because it can only be 
-		 * set once in the default constructor, based on the Zoo animal count.
+		 * There are no setters for the inventory id
 		 */
 		Inventory.counter++;
 		this.id = Inventory.counter;
@@ -58,10 +64,6 @@ public String getAlphabetCategory() {
 		else
 			this.AlphabetCategory = String;  
     }
-	
-	//public String getAlphabetCategory() {
-	//	return this.AlphabetCategory;
-	//}
 
 	public void setIBSN(int IBSN) {
 		if (IBSN >= 500) {
@@ -78,16 +80,10 @@ public String getAlphabetCategory() {
 	public void setGenre(Genre genre) {
 		this.Genre = genre;
 	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 	public java.lang.String getType() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 
 }

@@ -1,5 +1,6 @@
 /*
  * This subclass overrides string and declares ISBN, Genre, and AlphabetCategory for Book class
+ * 
  * @author Annaberdi Meredov 
  * @version 2.2
  * @since 2022.04.27

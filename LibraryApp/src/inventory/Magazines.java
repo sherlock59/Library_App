@@ -5,9 +5,6 @@
  * @version 2.2
  * @since 2022.04.27
  */
- 
-
-
 package inventory;
 
 public class Magazines extends Inventory {
