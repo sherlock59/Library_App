@@ -16,7 +16,7 @@ public class Book extends Inventory {
 	private int IBSN_Number;
 	
     public Book() {
-    	this(0 ,null , null);
+    	this(0 , null , "D");
     }
     
     public Book(int IBSN, Genre genre, String AlphabetCategory) {
