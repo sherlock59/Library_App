@@ -1,6 +1,8 @@
 /*
  * This subclass overrides string and declares ISBN, Genre, and AlphabetCategory for Book class
  * 
+ * Github link: https://github.com/sherlock59/Library_App.git
+ * 
  * @author Annaberdi Meredov 
  * @version 2.2
  * @since 2022.04.27
