@@ -1,24 +1,18 @@
-package testing; // keeping the testbench logic separate
+package testing; // keeping the library testing logic separate
 
 import java.util.ArrayList;
 import java.util.List;
 
-//import inventory.*; // the wildcard * will import all classes & interfaces
 import inventory.Book;
 import inventory.Genre;
 import inventory.Inventory;
 import inventory.Magazines;
 
 /** 
- * The TestBench class contains multiple unit testing methods for testing
- * the Animal base (super or parent) and derived (sub or child) classes.
+ * The library_testing class consists of many unit testing methods for testing 
+ * for parent and child classes. 
  * 
- * Since there should only be one TestBench running, all helper methods
- * are static.  We do not need to create a TestBench object to run the 
- * individual unit testing methods (helper methods).  
- * 
- * No other class needs to access the helper methods so all the unit testing
- * methods are defined as private. 
+ * Github link: https://github.com/sherlock59/Library_App.git
  * 
  * @author Annaberdi Meredov
  * @version 2.2
@@ -27,7 +21,7 @@ import inventory.Magazines;
 public class library_testing {
 	
 	/**
-	 * Stores all types of zoo animals as long as it's a derived from the Animal class.
+	 * Stores all classes that derived from Inventory class 
 	 */
 	private static List<Inventory> Library = new ArrayList<>();
 	
@@ -38,7 +32,7 @@ public class library_testing {
 	}
 	
 	/**
-	 * Unit test instantiation of an Animal reference variable (object)
+	 * Unit test instantiation of an inventory reference variable (object)
 	 * using the default constructor
 	 */
 	private static void unitTest1_Inventory_Default() {
@@ -47,7 +41,7 @@ public class library_testing {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 
-		//create an Animal instance (object) using default constructor
+		//create an inventory instance (object) using default constructor
 		Inventory inventory = new Inventory();
 		
 		displayInfo(inventory);
@@ -63,7 +57,7 @@ public class library_testing {
 	}
 	
 	/**
-	 * Unit test instantiation of an Animal reference variable (object)
+	 * Unit test instantiation of an Inventory reference variable (object)
 	 * using the overload constructor
 	 */
 	private static void unitTest2_Inventory_Overload() {	
@@ -91,7 +85,7 @@ public class library_testing {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		//create a Bird instance (object) using default constructor
+		//create a Book instance (object) using default constructor
 		Inventory book = new Book();
 		Library.add(book);
 	
@@ -102,11 +96,10 @@ public class library_testing {
 		book.setAlphabetCategory("Q");
 		
 		displayInfo(book);
-		////// was 
 	}
 
 	/**
-	 * This unit test is used to instantiation an Fish reference variable (object)
+	 * This unit test is used to instantiation a Magazines reference variable (object)
 	 * using the overload constructor
 	 */
 	private static void unitTest4_Magazines_Overload() {
@@ -115,7 +108,7 @@ public class library_testing {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		//create a Fish instance (object) using overload constructor		
+		//create a magazines instance (object) using overload constructor		
 	    Magazines magazines = new Magazines(81237123, Genre.COMEDY, "G");
 		Library.add(magazines);
 
@@ -124,7 +117,7 @@ public class library_testing {
 	}
 	
 	/**
-	 * This unit test is used to instantiation an Fish reference variable (object)
+	 * This unit test is used to instantiation a Magazines reference variable (object)
 	 * using the overload constructor
 	 */
 	private static void unitTest5_Invalid_Data() {
@@ -140,9 +133,9 @@ public class library_testing {
 	}
 		
 	/**
-	 * Display the Animal reference variable's id, type, gender, age, and weight
+	 * Display the Inventory reference variable's ISBN, type, genre, and its AlphabetCategory
 	 * 
-	 * @param animal the reference variable data to be displayed
+	 * @param Inventory the reference variable data to be displayed
 	 */
 	private static void displayInfo(Inventory Inventory) {
 	
@@ -152,8 +145,8 @@ public class library_testing {
 	} // end of displayInfo
 
 	/**
-	 * Display all Zoo Animals stored in the ArrayList.
-	 * It will display the id, type, gender, age, and weight
+	 * Display all library inventories stored in the ArrayList.
+	 * It will display the ISBN, type, genre, and AlphabetCategory
 	 */
 	private static void displayReport() {
 		
