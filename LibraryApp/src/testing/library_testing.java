@@ -7,6 +7,7 @@ import inventory.Book;
 import inventory.Genre;
 import inventory.Inventory;
 import inventory.Magazines;
+import inventory.Title;
 
 /** 
  * The library_testing class consists of many unit testing methods for testing 
@@ -46,7 +47,8 @@ public class library_testing {
 		
 		displayInfo(inventory);
 		
-		inventory.setIBSN(10632913);
+		inventory.setISBN(10632913);
+		inventory.setTitle(Title.Forest_Gump);
 		inventory.setGenre(Genre.MYSTERY);
 		inventory.setAlphabetCategory("N");
 		
@@ -66,8 +68,8 @@ public class library_testing {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-		//create another Animal instance (object) using overload constructor		
-		Inventory inventory = new Inventory(100, Genre.MYSTERY, "N");
+		//create another Inventory instance (object) using overload constructor		
+		Inventory inventory = new Inventory(100, Title.Forest_Gump,  Genre.MYSTERY, "N");
 		
 		Library.add(inventory);
 		
@@ -75,10 +77,7 @@ public class library_testing {
 
 	}
 
-	/**
-	 * Unit test instantiation of an Bird reference variable (object)
-	 * using the default constructor
-	 */
+	
 	private static void unitTest3_Book_Default() {
 		
 		System.out.println();
@@ -91,7 +90,8 @@ public class library_testing {
 	
 		displayInfo(book);
 		
-		book.setIBSN(12435);
+		book.setISBN(12435);
+		book.setTitle(Title.LOST);
 		book.setGenre(Genre.HORROR);
 		book.setAlphabetCategory("Q");
 		
@@ -109,11 +109,11 @@ public class library_testing {
 		System.out.println();
 		
 		//create a magazines instance (object) using overload constructor		
-	    Magazines magazines = new Magazines(81237123, Genre.COMEDY, "G");
+	    Magazines magazines = new Magazines(81237123, Title.How_To_Be_A_Gigalo, Genre.COMEDY, "G");
 		Library.add(magazines);
 
 		displayInfo(magazines);
-		/////// was 
+		
 	}
 	
 	/**
@@ -126,9 +126,10 @@ public class library_testing {
 		System.out.println("Start of " + Thread.currentThread().getStackTrace()[1].getMethodName());
 		System.out.println();
 		
-	    Book book = new Book(10293123, Genre.DRAMA, "T");	
+	    Book book = new Book(10293123, Title.Learn_Python_In_Five_Minutes, Genre.DRAMA, "T");	
 	    
 		displayInfo(book);
+		
 
 	}
 		
@@ -139,8 +140,8 @@ public class library_testing {
 	 */
 	private static void displayInfo(Inventory Inventory) {
 	
-		System.out.printf("IBSN: %-10d  Type: %-10s Genre: %-10s AlphabetCategory: %-10s \n",
-				Inventory.getIBSN(), Inventory.getType(), Inventory.getGenre(), Inventory.getAlphabetCategory());
+		System.out.printf("ISBN: %-10d  Title: %-10s Type: %-10s Genre: %-10s AlphabetCategory: %-10s \n",
+				Inventory.getISBN(), Inventory.getTitle(), Inventory.getGenre(), Inventory.getAlphabetCategory());
 		
 	} // end of displayInfo
 
@@ -152,12 +153,13 @@ public class library_testing {
 		
 		System.out.println();
 		System.out.println("============== Library REPORT ============");
-		System.out.println("IBSN  Type       Genre    AlphabetCategory");
+		System.out.println("ISBN  Title   Type       Genre    AlphabetCategory");
 		System.out.println("=== ========== ========== === ========");
 		
 		for (Inventory Inventory : Library) {
-			System.out.printf("%-10d %-10s %-10s %-10s\n",
-					Inventory.getIBSN(), Inventory.getType(), Inventory.getGenre(), Inventory.getAlphabetCategory());
+			System.out.printf("%-10d %-10s %-10s %-10s %-10s\n",
+					Inventory.getISBN(), Inventory.getTitle(), Inventory.getType(), 
+					Inventory.getGenre(), Inventory.getAlphabetCategory());
 		}
 		
 		System.out.println();

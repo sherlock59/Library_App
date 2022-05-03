@@ -13,15 +13,16 @@ public class Book extends Inventory {
 	
 	final String type = "Book";
 	
-	private int IBSN_Number;
+	private int ISBN;
+	
 	
     public Book() {
-    	this(0 , null , "D");
+    	this(0 , null, null , "D");
     }
     
-    public Book(int IBSN, Genre genre, String AlphabetCategory) {
-		super(IBSN, genre, AlphabetCategory);
-		this.IBSN_Number = 0;
+    public Book(int ISBN, Title title, Genre genre, String AlphabetCategory) {
+		super(ISBN, title, genre, AlphabetCategory);
+		this.ISBN = 312841321;
 	}
     
     /*
@@ -32,19 +33,19 @@ public class Book extends Inventory {
     	return this.type;
     }
     
-    public int getISBN_Number() {
-    	return this.IBSN_Number;
+    public int getISBN() {
+    	return this.ISBN;
     }
     
-    public void setISBN_Number(int ISBN_Number) {
-    	if(ISBN_Number >= 0)
-    		this.IBSN_Number =+ ISBN_Number;
+    public void setISBN(int ISBN) {
+    	if(ISBN >= 0)
+    		this.ISBN =+ ISBN;
     	else
-    		this.IBSN_Number = 0;
+    		this.ISBN = 0;
     }
-    
-    public void booked() {
-    	System.out.println(this.type + "IBSN number booked most..");
+
+	public void booked() {
+    	System.out.println(this.type + "ISBN number booked most..");
     }
 }
 

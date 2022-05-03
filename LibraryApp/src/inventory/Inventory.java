@@ -26,7 +26,9 @@ public class Inventory {
 	
 	protected int id = 0;
 
-	protected int IBSN = 0;
+	protected int ISBN = 0;
+	
+	protected Title Title = null;
 
 	protected Genre Genre = null;
 
@@ -41,17 +43,18 @@ public Inventory(){
 		this.id = Inventory.counter;
 	}
 
-public Inventory(int IBSN, Genre genre, String AlphabetCategory ) {
+public Inventory(int ISBN, Title title, Genre genre, String AlphabetCategory ) {
 	
 	this();
 	
-	this.setIBSN(IBSN);
+	this.setISBN(ISBN);
+	this.setTitle(Title);
 	this.setGenre(Genre);
 	this.setAlphabetCategory(AlphabetCategory);
 }
 
-public int getIBSN() {
-	return this.IBSN;
+public int getISBN() {
+	return this.ISBN;
 }
 
 public String getAlphabetCategory() {
@@ -65,12 +68,20 @@ public String getAlphabetCategory() {
 			this.AlphabetCategory = String;  
     }
 
-	public void setIBSN(int IBSN) {
-		if (IBSN >= 500) {
-			this.IBSN = IBSN;	
+	public void setISBN(int ISBN) {
+		if (ISBN >= 500) {
+			this.ISBN = ISBN;	
 		}
 		else 
-			this.IBSN = 300;
+			this.ISBN = 9123;
+	}
+	
+	public Title getTitle() {
+		return this.Title;
+	}
+	
+	public void setTitle(Title title) {
+		this.Title = title;
 	}
 	
 	public Genre getGenre() {
